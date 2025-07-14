@@ -1,0 +1,16 @@
+plugins {
+    id 'java'
+    id 'jacoco'
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        html.enabled true
+    }
+}
+
+test {
+    useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
